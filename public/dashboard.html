@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head><title>ViperX Dashboard</title></head>
+<body style="text-align:center; padding-top:50px; font-family:sans-serif;">
+  <h2>💥 ViperX Panel</h2>
+  <form id="freezeForm">
+    <input name="number" placeholder="Target Number" required /><br><br>
+    <button onclick="send('andros')">Crash Android</button>
+    <button onclick="send('ios')">Crash iOS</button>
+  </form>
+  <p id="result"></p>
+  <script>
+    async function send(mode) {
+      event.preventDefault();
+      const number = document.querySelector('input[name=number]').value;
+      const res = await fetch('/api/freeze', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: `number=${number}&mode=${mode}`
+      });
+      document.getElementById('result').innerText = await res.text();
+    }
+  </script>
+</body>
+</html>

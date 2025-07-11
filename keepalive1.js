@@ -1,6 +1,5 @@
-
-const http = require('http');
-const fetch = require('node-fetch');
+import http from 'http';
+import fetch from 'node-fetch';
 
 const PORT = process.env.PORT || 3000;
 const SELF_URL = 'https://vxapibug.onrender.com';
@@ -9,6 +8,7 @@ const SELF_URL1 = 'https://vxapitg.onrender.com';
 // Simple HTTP server to satisfy Render's uptime check
 http.createServer((req, res) => {
   res.writeHead(200, { 'Content-Type': 'text/plain' });
+  res.end('KeepAlive running...');
 }).listen(PORT, () => {
   console.log(`✅ KeepAlive server running on port ${PORT}`);
 });

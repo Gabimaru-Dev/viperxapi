@@ -1,6 +1,6 @@
 
-const http = require('http');
-const fetch = require('node-fetch');
+import http from 'http';
+import fetch from 'node-fetch';
 
 const PORT = process.env.PORT || 3000;
 const SELF_URL = 'https://vxapibug.onrender.com';

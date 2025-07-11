@@ -1,5 +1,5 @@
 
-const { spawn } = require('child_process');
+import { spawn } from 'child_process';
 
 function runScript(name, path) {
   const proc = spawn('node', [path], { stdio: 'inherit' });

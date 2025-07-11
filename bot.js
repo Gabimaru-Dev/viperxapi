@@ -29,17 +29,13 @@ bot.command('createuser', async (kunle) => {
   fs.writeFileSync('users.json', JSON.stringify(users, null, 2));
 
 kunle.reply(`✅ Key created:
-\`\`\`
-👤 Username: ${username}
-🔑 Key: ${key}
-📆 Expires: ${expires}
-\`\`\`
+👤 Username: \`${username}\`
+🔑 Key: \`${key}\`
+📆 Expires: \`${expires}\`
 
-\`\`\`
 🧪 How to Use:
 1. Visit: https://vxapibug.onrender.com
 2. Paste username & key to login
-\`\`\`
 `);
 });
 

@@ -24,7 +24,9 @@ function getUsers() {
 }
 
 function isExpired(dateStr) {
-  return new Date(dateStr).getTime() < Date.now();
+  const now = new Date();
+  const expiry = new Date(dateStr);
+  return now.getTime() > expiry.getTime();
 }
 
 app.get('/', (req, res) => {

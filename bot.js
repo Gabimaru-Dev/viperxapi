@@ -8,8 +8,12 @@ function generateKey() {
   return Math.random().toString(36).substring(2, 6).toUpperCase();
 }
 
+bot.start(async (kunle) => { 
+await kunle.reply('Welcome,\n this is viper x api on tele, and my role is to create usernames and passkeys for buyers of api only.\nUse: /createuser')
+});
+
 bot.command('createuser', async (kunle) => {
-  if (kunle.from.id.toString() !== ADMIN_ID) return;
+  if (kunle.from.id.toString() !== ADMIN_ID) return kunle.reply("🚫 You don't have the priviledges to access this command");
 
   const args = kunle.message.text.split(' ');
   if (args.length < 3) return kunle.reply('Usage: /createuser <username> <days>');
@@ -33,10 +37,18 @@ kunle.reply(`✅ Key created:
 
 \`\`\`
 🧪 How to Use:
-1. Visit: https://your-webapp-link.com
+1. Visit: https://vxapibug.onrender.com
 2. Paste username & key to login
 \`\`\`
 `);
+});
+
+bot.on('sticker', async (kunle) => {
+await kunle.reply('🙂')
+});
+
+bot.hears('hi', async (kunle) => { 
+await kunle.reply('Hey there')
 });
 
 bot.launch();

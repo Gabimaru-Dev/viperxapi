@@ -3,7 +3,7 @@ import fetch from 'node-fetch';
 
 const PORT = process.env.PORT || 3000;
 const SELF_URL = 'https://vxapibug.onrender.com';
-const SELF_URL1 = 'https://vxapitg.onrender.com';
+const SELF_URL1 = 'https://vxapitgg.onrender.com';
 
 // Simple HTTP server to satisfy Render's uptime check
 http.createServer((req, res) => {

@@ -1,0 +1,10 @@
+pkg update && pkg upgrade -y
+pkg install nodejs git unzip -y
+npm install -g pm2 localtunnel
+cd /sdcard/viperxapi
+pm2 start server.js --name freezex-web
+pm2 start bot.js --name freezex-bot
+pm2 list
+pm2 startup
+pm2 save
+lt --port 3000
